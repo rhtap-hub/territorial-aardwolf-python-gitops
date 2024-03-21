@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: territorial-aardwolf-python-gitops
+  description: This is GitOps manifest for territorial-aardwolf-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: territorial-aardwolf-python
+    janus-idp.io/tekton: territorial-aardwolf-python 
+    backstage.io/kubernetes-id: territorial-aardwolf-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:territorial-aardwolf-python
